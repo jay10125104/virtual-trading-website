@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <title>CASIOTRADING </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class='logo'>
+                Casio<span>Trade</span>X
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Option Chain</a>
+                <a href="https://www.nseindia.com/market-data/pre-open-market-cm-and-emerge-market">Pre-Open Market</a>
+                <a href="https://web.sensibull.com/option-chain?expiry=2022-12-08&tradingsymbol=NIFTY">Contact</a>
+            </div>
+            <div class="icon">
+                <i class="fa fa-search"></i>
+                <button class="btn" type="button" id="submitData">Sign-out</button>
+            </div>
+        </nav>
+        <section class="h-text">
+            <i class="fa fa-line-chart" id="chart"></i>
+            <h1 data-aos="flip-left">Virtual Trading Platform</h1>
+            <input type="text" name="" placeholder="Search Stock Here...">
+            <button id=""><i class="fa fa-search"></i></button>
+        </section>
+    </header>
+    <br>
+    <br>
+    <br>
+    <section class="filter-gallery">
+        <div class="portfolio-menu">
+            <ul>
+                <li class="first" data-filter="*">All</li>
+                <li data-filter=".equity">EQUITY</li>
+                <li data-filter=".future">FUTURE</li>
+                <li data-filter=".option">OPTION</li>
+            </ul>
+        </div>
+        <div class="items">
+            {% for product in product %}
+            <div class="item option">
+                <img src="{{product.product_image.url}}" alt="" width="100" height="200">
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="member">
+        <div class="member-info">
+            <h1>Learn<span>Trading</span></h1>
+            <p>Grow With Us</p>
+        </div>
+        <div class="member-card">
+            <img src="{% static 'app/images/icon.png' %}" class="av" height="120" width="120" alt="Avatar">
+            <p>
+                Welcome to the most trusted Trading Platform for Virtual-Trading purpose.Apply your Trading Teachnique
+                which will help you to be profitable in real time trade.With real time data updation and with more
+                than 45 indicators,Trade in option as well as futures easily.
+            </p>
+            <h2>Grow Together</h2>
+            {% for socialmedia in socialmedia %}
+            <img src="{{socialmedia.product_image.url}}" width="100">
+            {% endfor %}
+        </div>
+        <div class="m-images">
+            {% for option in option %}
+            <img src="{{option.product_image.url}}" alt="">
+            {% endfor %}
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    
+    <!-- <script>
+        $('.items').isotope({
+            // options
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+        });
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('first');
+            $(this).addClass('first');
+            var selector = $(this).attr('data-filter');
+            $('.items').isotope({
+                filter: selector
+            });
+            return false;
+        });
+    </script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <footer>
+        <div class="newsletter">
+            
+            <div>
+                <h2>Subscribe to get buzzing stock alert</h2>
+                <p>Just one step away to enhance your profit</p>
+            </div>
+            <div class="subscribe">
+                <label for="">
+                    <input type="text" name="" placeholder="enter your email">
+                    <button>Subscribe</button>
+                </label>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

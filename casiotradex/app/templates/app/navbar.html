@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'app/css/navstyle.css' %}">
+</head>
+<body>
+    <div class="main">
+
+        <div class="navbar">
+            <div class="icon">
+            Casio<span>Trade</span>X</h2>
+        </div>
+        
+        <div class="menu">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Funds</a></li>
+                <li><a href="#">Console</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="search">
+            <input class="srch" type="search" name="" placeholder="Type To text">
+            <a href="#"> <button class="btn">Search</button></a>
+        </div>
+        
+    </div>
+</div>  
+{% block main-content %} {% endblock main-content %}  
+</body>
+</html>
